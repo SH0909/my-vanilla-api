@@ -12,6 +12,7 @@
   <main>
     <h1>Vanilla JavaScript App</h1>
     <p>Loading content from the API: <b id="name">...</b></p>
+    <div id="result"></div>
   </main>
 
   <script>
@@ -19,11 +20,12 @@
         xhr.onload = function() {
             if (xhr.status === 200 || xhr.status === 201) {
               console.log(xhr.responseText);
+              $("#result").html(xhr.responseText);
             } else {
               console.error(xhr.responseText);
             }
           };
-          xhr.open('GET', 'http://127.0.0.1:5000/list');
+          xhr.open('POST', 'http://127.0.0.1:5000/list');
           xhr.send()
     </script>
 </body>
