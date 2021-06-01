@@ -9,7 +9,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     table_client = table_service_client.get_table_client(table_name="myTable")
     table_list={}
     tmp_list={}
-    cnt=1https://github.com/SH0909/my-vanilla-api/blob/main/api/getlist/__init__.py
+
     for entity in table_client.list_entities():
         tmp_list["PartitionKey"]=entity["PartitionKey"]
         tmp_list["title"]=entity["title"]
