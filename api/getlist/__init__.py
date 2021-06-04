@@ -8,8 +8,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     #conn_str=os.environ['AZURE_TABLE_CONN_STR']
     #nstr="hello"
     #nstr=nstr+conn_str
-    conn_str=os.environ.get("TEST_KEY")
-    return func.HttpResponse(conn_str)
+    #conn_str=os.environ.get("TEST_KEY")
+    return func.HttpResponse(str(os.environ))
 '''
     table_service_client = TableServiceClient.from_connection_string(conn_str=conn_str)
     table_client = table_service_client.get_table_client(table_name="myTable")
