@@ -36,6 +36,7 @@ jobs:
           CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
           TEST_KEY: ${{ secrets.TEST_KEY }}
           SH0909_VERSION: "public static"
+          TEST2: testtest
         
 
 
