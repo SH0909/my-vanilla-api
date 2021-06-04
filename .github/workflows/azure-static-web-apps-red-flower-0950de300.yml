@@ -38,10 +38,9 @@ jobs:
           SH0909_VERSION: "public static"
           TEST2: testtest
 
-      - name: set environment variables
-        uses: allenevans/set-env@v1.0.0
-        with:
-          MY_ENV_VAR: 'my value'
+      - name: Set env-var
+        run: 
+         echo "MY_ENV_VAR=test" >>$GITHUB_ENV
         
 
 
