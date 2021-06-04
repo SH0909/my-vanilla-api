@@ -35,7 +35,8 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-        
+      - name: test
+        run: AZURE_TABLE_CONN_STR=${{ secrets.AZURE_TABLE_CONN_STR }} python -c 'import os;print(os.environ['AZURE_TABLE_CONN_STR'])
 
 
   close_pull_request_job:
