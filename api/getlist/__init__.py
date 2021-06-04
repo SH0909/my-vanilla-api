@@ -9,7 +9,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     #nstr="hello"
     #nstr=nstr+conn_str
     #conn_str=os.environ.get("TEST_KEY")
-    return func.HttpResponse(str(os.environ))
+    return func.HttpResponse(str(os.environ['HELLO_TEST']))
 '''
     table_service_client = TableServiceClient.from_connection_string(conn_str=conn_str)
     table_client = table_service_client.get_table_client(table_name="myTable")
