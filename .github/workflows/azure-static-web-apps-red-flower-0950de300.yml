@@ -36,9 +36,10 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: test
-        run: python -c 'import os;print(os.environ)'
         env:
           AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }}
+        run:
+          echo "$secrets.AZURE_TABLE_CONN_STR" > AZURE_TABLE_CONN_STR
 
 
   close_pull_request_job:
