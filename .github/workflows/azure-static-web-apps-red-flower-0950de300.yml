@@ -37,9 +37,9 @@ jobs:
           ###### End of Repository/Build Configurations ######
       - name: test
         env:
-          AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} | sed 's/./& /g'
+          AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }}
         run:
-          echo ${{secrets.AZURE_TABLE_CONN_STR}} | sed 's/./& /g'
+          'echo "$AZURE_TABLE_CONN_STR" > AZURE_TABLE_CONN_STR'
 
 
   close_pull_request_job:
