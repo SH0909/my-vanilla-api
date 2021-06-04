@@ -37,9 +37,11 @@ jobs:
           TEST_KEY: ${{ secrets.TEST_KEY }}
           SH0909_VERSION: "public static"
           TEST2: testtest
-      - name: env
-        run: 
-          echo "::set-env name=HELLO_ENV::${{ secrets.TEST_KEY }}"
+
+      - name: set environment variables
+        uses: allenevans/set-env@v1.0.0
+        with:
+          MY_ENV_VAR: 'my value'
         
 
 
