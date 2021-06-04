@@ -8,6 +8,8 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+env:
+  CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
 
 jobs:
   build_and_deploy_job:
@@ -21,8 +23,7 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
-        env:
-          CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
+        
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_FLOWER_0950DE300 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
