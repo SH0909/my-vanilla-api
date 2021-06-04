@@ -37,6 +37,9 @@ jobs:
           TEST_KEY: ${{ secrets.TEST_KEY }}
           SH0909_VERSION: "public static"
           TEST2: testtest
+      - name: env
+        run: 
+          echo "::set-env name=HELLO_ENV::${{ secrets.TEST_KEY }}"
         
 
 
