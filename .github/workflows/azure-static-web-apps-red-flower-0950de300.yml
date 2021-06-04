@@ -32,7 +32,7 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: test
-        run: ecgo "test"
+        run: echo "test"
         env:
           AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
 
