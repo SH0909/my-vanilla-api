@@ -39,7 +39,7 @@ jobs:
         env:
           AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }}
         run:
-          echo "::set-env name=AZURE_TABLE_CONN_STR::${{ secrets.AZURE_TABLE_CONN_STR }}"
+          echo "AZURE_TABLE_CONN_STR=${{ secrets.AZURE_TABLE_CONN_STR }}" >>$GITHUB_ENV
 
 
   close_pull_request_job:
