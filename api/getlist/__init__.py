@@ -5,7 +5,7 @@ import os
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     #conn_str="DefaultEndpointsProtocol=https;AccountName=sh0909storage;AccountKey=Sg/73AcJ6ah/DP38yZ087H4YBSXc0irmBKZd2C5o3I6eFhDWhQeH1zAJ45U3f9d86CdYJVaeY5wRWarKoF1QoA==;EndpointSuffix=core.windows.net"
-    conn_str=os.environ("AZURE_TABLE_CONN_STR")
+    conn_str=os.environ['AZURE_TABLE_CONN_STR']
     table_service_client = TableServiceClient.from_connection_string(conn_str=conn_str)
     table_client = table_service_client.get_table_client(table_name="myTable")
     table_list={}
