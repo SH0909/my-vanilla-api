@@ -34,6 +34,7 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: run test
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
         env:
           AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }}
 
