@@ -10,6 +10,7 @@ on:
       - main
 env:
   CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
+  TEST_KEY: ${{ secrets.TEST_KEY }}
 
 jobs:
   build_and_deploy_job:
