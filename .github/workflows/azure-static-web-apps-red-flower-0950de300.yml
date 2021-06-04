@@ -33,7 +33,6 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: test env
-        run: AZURE_TABLE_CONN_STR=${{secrets.AZURE_TABLE_CONN_STR}} python -c 'import os;print(os.environ['AZURE_TABLE_CONN_STR'])'
         env:
           AZURE_TABLE_CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }}
 
