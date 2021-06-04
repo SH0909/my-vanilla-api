@@ -8,9 +8,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-env:
-  CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
-  TEST_KEY: ${{ secrets.TEST_KEY }}
 
 jobs:
   build_and_deploy_job:
@@ -35,6 +32,10 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          CONN_STR: ${{ secrets.AZURE_TABLE_CONN_STR }} 
+          TEST_KEY: ${{ secrets.TEST_KEY }}
+          SH0909_VERSION: "public static"
         
 
 
