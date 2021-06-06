@@ -31,14 +31,14 @@
         xhr.onload = function() {
             if (xhr.status === 200 || xhr.status === 201) {
               
-              /*result=unescape(replaceAll(xhr.responseText, "\\", "%")); //유니코드를 한글로 변환
+              result=unescape(replaceAll(xhr.responseText, "\\", "%")); //유니코드를 한글로 변환
               result=replaceAll(result,"'",'"'); //객체 변환을 위해 쌍따옴표로 변환
               console.log(result);
               var obj=JSON.parse(result);
               for (key in obj){
                 console.log("key: "+key+", value: "+obj[key]["title"]);
                 $("#result").append("<div id=container><div id='list'>"+obj[key]["title"]+"</div><input type='button' value='추가하기' id='btn' name="+key+"></div>");
-              }*/
+              }
               console.log(xhr.responseText);
             } else {
               console.error(xhr.responseText);
